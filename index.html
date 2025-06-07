@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBROCA</title>
+    <style>
+        body {
+            background-color: rgb(41, 40, 40);
+        }
+
+        .box {
+            background: #09f;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 4px;
+            border-radius: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+
+            img {
+                aspect-ratio: 1/1;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--<div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>-->
+    <div class="grid">
+        <img src="assets/fila-1-columna-1.webp">
+        <img src="assets/fila-1-columna-2.webp">
+        <img src="assets/fila-1-columna-3.webp">
+        <img src="assets/fila-2-columna-1.webp">
+        <img src="assets/fila-2-columna-2.webp">
+        <img src="assets/fila-2-columna-3.webp">
+        <img src="assets/fila-3-columna-1.webp">
+        <img src="assets/fila-3-columna-2.webp">
+        <img src="assets/fila-3-columna-3.webp">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script>
+        /*gsap.to('.box:first-child',{
+            x:100,
+            duration:1
+        })
+       gsap.to('.box:nth-child(2)',{
+            x:200,
+            duration:1
+        })
+        const boxes = document.querySelectorAll('.box')
+        boxes.forEach((box, i) =>{
+            gsap.to(box,{
+                x:() => Math.random() * 200,
+                duration:1,
+                delay: i * 0.4
+            })
+        })*/
+
+        /*staggered animations: evita el uso del foreach
+        stagger es el tiempo
+        repeat veces, -1 para infinite, 0 una vez
+        yoyo para que vuelva
+        gsap.to('.box', {
+            x: 200,
+            duration: 1,
+            rotate: 360,
+            scale: .5,
+            repeat: 5,
+            yoyo: true,
+            stagger: 0.2
+        })
+
+        
+        gsap.to('.box', {
+            x: 500,
+            duration: 3,
+            rotate: 180,
+            scale: .25,
+            stagger: {
+                each: 0.5,
+                repeat: 3,
+                yoyo: true
+            }
+        })*/
+
+        gsap.to('.grid img', {
+            duration: 5,
+            scale: .9,
+            opacity: 0,
+            stagger: {
+                each: 1,
+                repeat: -1,
+                yoyo: true
+            }
+        })
+    </script>
+</body>
+
+</html>
