@@ -60,6 +60,15 @@
     <div class="box purple"></div>
     <div class="box blue"></div>
     <div class="box yellow"></div>
+    <footer>
+        <button id="play">reproducir</button>
+        <button id="pause">pausar</button>
+        <button id="resume">resumir</button>
+        <button id="reverse">revertir</button>
+        <button id="restart">reiniciar</button>
+        <button id="turbo">turbo</button>
+    </footer>
+    <small id="log "></small>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script>
         /*gsap.to('.box:first-child',{
@@ -135,21 +144,47 @@
             repeat: -1,
             yoyo: true
         })*/
-       // Creamos una linea de tiempo donde indicamos en que orden se hacen las animaciones.
-       const tl = gsap.timeline()
-        tl.to('.box.purple', {
-            x: 200,
-            duration: 2
+        // Creamos una linea de tiempo donde indicamos en que orden se hacen las animaciones.
+        const tl = gsap.timeline({
+            defaults: {
+                duration: 2
+            }, 
+            onComplete: () => {
+                window.log.innerHTML +="Timeline completada"
+            }
         })
-        .to('.box.blue', {
-            duration: 4,
-            y: -80
-        })
-        .to('.box.yellow', {
-            duration: 2,
-            x: 100,
-            y: -158
-        })
+        tl
+            .to('.box.purple', {
+                x: 200,
+            }, 1) //Espera un segundo al empeza
+            .to('.box.blue', {
+                duration: .5,
+                y: -80
+            }, 2) //indica que empiece a la vez que el anterior
+            .to('.box.yellow', {
+                x: 100,
+                y: -158
+            }, 3) //"=+1" Espera un 1 segundo al empezar cuando acaba el anterior  
+
+        window.play.onclick = () => {
+            tl.play()
+        }
+        window.pause.onclick = () => {
+            tl.pause()
+        }
+        window.resume.onclick = () => {
+            tl.resume()
+        }
+        window.reverse.onclick = () => {
+            tl.reverse()
+        }
+        window.restart.onclick = () => {
+            tl.restart()
+        }
+        window.turbo.onclick = () => {
+            tl.timeScale(5)
+        }
+
     </script>
 </body>
 
