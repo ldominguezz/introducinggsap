@@ -5,87 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #espacio {
+            height: 100vh;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="flex flex-col gap-4 bg-[#98e7c2]  px-8 text-base uppercase">
+    <div id="espacio"></div>
+    <div class="flex flex-col gap-4 bg-[#98e7c2]  px-8 text-base uppercase flex flex-col items-center">
         <h1 class="text-4xl uppercase pt-4 flex justify-center text-[#393654]">Habilidades</h1>
-        <p class="flex justify-center text-white text-2xl hover:scale-110 transition-transform hover:text-green-800"
-            id="habilidades">
+        <p class="text-white text-2xl hover:scale-110 transition-transform hover:text-green-800" id="habilidades">
             Habilidades de gestión</p>
-        <p class="flex justify-center text-white hover:scale-110 transition-transform hover:text-green-800" id="tiempo">
+        <p class="text-white hover:scale-110 transition-transform hover:text-green-800" id="tiempo">
             Gestión
             del tiempo</p>
-        <p class="flex justify-end text-white hover:scale-110 transition-transform hover:text-green-800"
-            id="pensamiento">Pensamiento
+        <p class="text-white hover:scale-110 transition-transform hover:text-green-800" id="pensamiento">Pensamiento
             crítico</p>
-        <p class="flex justify-center text-primary text-3xl  hover:scale-110 transition-transform hover:text-green-800"
-            id="creatividad">
+        <p class="text-primary text-3xl hover:scale-110 transition-transform hover:text-green-800" id="creatividad">
             Creatividad</p>
-        <p class="flex justify-start text-white text-xl hover:scale-110 transition-transform hover:text-green-800"
-            id="trabajo">
+        <p class="text-white text-xl hover:scale-110 transition-transform hover:text-green-800" id="trabajo">
             Trabajo en equipo</p>
-        <p class="flex justify-center text-white hover:scale-110 transition-transform hover:text-green-800"
-            id="sociales">
+        <p class="text-white hover:scale-110 transition-transform hover:text-green-800" id="sociales">
             Habilidades sociales</p>
-        <p class="flex justify-end text-white hover:scale-110 transition-transform hover:text-green-800" id="detalles">
+        <p class="text-white hover:scale-110 transition-transform hover:text-green-800" id="detalles">
             Atención a
             los detalles</p>
-        <p class="flex justify-center text-primary text-2xl hover:scale-110 transition-transform hover:text-green-800"
-            id="solucion">
+        <p class="text-primary text-2xl hover:scale-110 transition-transform hover:text-green-800" id="solucion">
             Solución de problemas</p>
-        <p class="flex justify-start text-white hover:scale-110 transition-transform hover:text-green-800"
-            id="resiliencia">Resiliencia
+        <p class="text-white hover:scale-110 transition-transform hover:text-green-800" id="resiliencia">Resiliencia
         </p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script>
-        /*const tl = gsap.timeline({
-            defaults: {
-                duration: 0.75,
-                ease: "bounce.in"
-            },
-            onComplete: () => {
-                console.log("Timeline completada")
-            }
-        })
-        tl
-            .to('#habilidades', {
-                y: 70,
-                duration: 1,
-                ease: "bounce.in"
-            })
-            .to('#tiempo', {
-                x: -50
-            })
-            .to('#pensamiento', {
-                y: -40
-            })
-            .to('#creatividad', {
-                x: -50
-            })
-            .to('#trabajo', {
-                x: 70
-            })
-            .to('#sociales', {
-                x: 70
-            })
-            .to('#detalles', {
-                x: -70
-            })
-            .to('#solucion', {
-                x: -70
-            })
-            .to('#resiliencia', {
-                y: -100
-            })*/
-        gsap.to('#habilidades', {
-            x: -100,
-            duration: 2,
-            scale: .9
-        })
+    <script type="module" src="main.js">
     </script>
 </body>
 
-</html>
+</html>     
